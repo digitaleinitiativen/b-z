@@ -31,8 +31,30 @@ const codesFromGraph = (node, prefixCode = "", codes = {}) => {
 	return { ...codesFromGraph(node.left, prefixCode + "b"), ...codesFromGraph(node.right, prefixCode + "z") };
 };
 
-const encode = (text, codes) => {
-	return [...text].map((char) => codes[char] !== undefined ? codes[char] : '[invalid]').join(" ");
+const encodeGenerator = (graph) => {
+	const codes = codesFromGraph(graph);
+	return (text) => {
+		return [...text].map((char) => (codes[char] !== undefined ? codes[char] : "[invalid]")).join(" ");
+	};
+};
+
+const decodeGenerator = (graph) => (text) => {
+	const charsCleaned = text.replaceAll(" ", "").replaceAll("[invalid]", "�").split("");
+	let decoded = "";
+	let node = graph;
+	for (let char of charsCleaned) {
+		if (char === "�") {
+			decoded += "�";
+			continue;
+		}
+
+		node = char === "b" ? node.left : node.right;
+		if (node.value !== undefined) {
+			decoded += node.value;
+			node = graph;
+		}
+	}
+	return decoded;
 };
 
 const testText = "Gemeinsam zünden wir den Funken* der Digitalisierung** in den Menschen*** der Region****";
@@ -41,11 +63,18 @@ const charFrequency = getCharFrequency(testText);
 
 const valueNodes = valueNodesFromCharFrequency(charFrequency);
 const graph = graphFromValueNodes(valueNodes);
-const codes = codesFromGraph(graph);
+
+const encode = encodeGenerator(graph);
+const decode = decodeGenerator(graph);
 
 console.log(charFrequency);
 console.log(JSON.stringify(graph, null, 2));
-console.log(codes);
+console.log(codesFromGraph(graph));
 
-console.log("Digitale Initiativen");
-console.log(encode("Digitale Initiativen", codes));
+const text = "Digitale Initiativen";
+const encoded = encode(text);
+const decoded = decode(encoded);
+
+console.log(text);
+console.log(encoded);
+console.log(decoded);
