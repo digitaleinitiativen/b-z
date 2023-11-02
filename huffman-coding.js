@@ -1,9 +1,7 @@
 const getCharFrequency = (text) => {
 	const freq = {};
 	for (let char of text) {
-		if (!freq[char]) {
-			freq[char] = 0;
-		}
+		if (!freq[char]) freq[char] = 0;
 		freq[char] += 1;
 	}
 	return freq;
@@ -15,7 +13,10 @@ const leafNode = (left, right) => ({ left, right, weight: left.weight + right.we
 
 const sortNodes = (arr) => arr.sort((a, b) => a.weight - b.weight);
 
-const valueNodesFromCharFrequency = (freq) => Object.entries(freq).map(([k, v]) => valueNode(k, v));
+const graphFromCharFrequency = (freq) => {
+	const valueNodes = Object.entries(freq).map(([k, v]) => valueNode(k, v));
+	return graphFromValueNodes(valueNodes);
+};
 
 const graphFromValueNodes = (valueNodes) => {
 	if (valueNodes.length === 1) return valueNodes[0];
@@ -61,8 +62,7 @@ const testText = "Gemeinsam zünden wir den Funken* der Digitalisierung** in den
 
 const charFrequency = getCharFrequency(testText);
 
-const valueNodes = valueNodesFromCharFrequency(charFrequency);
-const graph = graphFromValueNodes(valueNodes);
+const graph = graphFromCharFrequency(charFrequency);
 
 const encode = encodeGenerator(graph);
 const decode = decodeGenerator(graph);
