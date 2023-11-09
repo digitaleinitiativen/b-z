@@ -1,3 +1,4 @@
+const huffman = require("./huffman-coding.js");
 const fs = require("fs");
 
 const getChannels = () => {
@@ -16,15 +17,6 @@ const getChannelMessages = (channel) => {
 	return filenames.map(readMessages).flat();
 };
 
-const getCharFrequency = (text) => {
-	const freq = {};
-	for (let char of text) {
-		if (!freq[char]) freq[char] = 0;
-		freq[char] += 1;
-	}
-	return freq;
-};
-
 const cleanup = (text = "") => {
 	const whitelist = ["ü", "ä", "ö", "ß", "𝗶", "𝗲", "𝗻", "𝘁", "𝗮", "•"];
 
@@ -40,8 +32,14 @@ const messages = channels.map(getChannelMessages).flat();
 console.log(channels);
 console.log(messages.length);
 
-const charFrequency = getCharFrequency(cleanup(messages.join("")));
+const charFrequency = huffman.getCharFrequency(cleanup(messages.join("")));
 console.log(charFrequency);
 
 const charFrequencySorted = Object.entries(charFrequency).sort((a, b) => b[1] - a[1]);
 console.log(charFrequencySorted);
+
+const graph = huffman.graphFromCharFrequency(charFrequency);
+
+console.log(JSON.stringify(graph, null, 2));
+
+fs.writeFileSync("graph.json", JSON.stringify(graph, null, 2));

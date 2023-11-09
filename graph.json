@@ -1,0 +1,655 @@
+{
+  "left": {
+    "left": {
+      "left": {
+        "left": {
+          "left": {
+            "value": "m",
+            "weight": 1132
+          },
+          "right": {
+            "value": "c",
+            "weight": 1165
+          },
+          "weight": 2297
+        },
+        "right": {
+          "left": {
+            "left": {
+              "value": ".",
+              "weight": 585
+            },
+            "right": {
+              "left": {
+                "left": {
+                  "value": "_",
+                  "weight": 142
+                },
+                "right": {
+                  "value": "E",
+                  "weight": 146
+                },
+                "weight": 288
+              },
+              "right": {
+                "value": "-",
+                "weight": 298
+              },
+              "weight": 586
+            },
+            "weight": 1171
+          },
+          "right": {
+            "value": "o",
+            "weight": 1180
+          },
+          "weight": 2351
+        },
+        "weight": 4648
+      },
+      "right": {
+        "left": {
+          "value": "t",
+          "weight": 2490
+        },
+        "right": {
+          "left": {
+            "left": {
+              "left": {
+                "left": {
+                  "value": "2",
+                  "weight": 151
+                },
+                "right": {
+                  "left": {
+                    "left": {
+                      "value": "Q",
+                      "weight": 37
+                    },
+                    "right": {
+                      "value": "Z",
+                      "weight": 38
+                    },
+                    "weight": 75
+                  },
+                  "right": {
+                    "left": {
+                      "value": "ß",
+                      "weight": 38
+                    },
+                    "right": {
+                      "left": {
+                        "value": "•",
+                        "weight": 19
+                      },
+                      "right": {
+                        "left": {
+                          "value": "+",
+                          "weight": 8
+                        },
+                        "right": {
+                          "value": "#",
+                          "weight": 11
+                        },
+                        "weight": 19
+                      },
+                      "weight": 38
+                    },
+                    "weight": 76
+                  },
+                  "weight": 151
+                },
+                "weight": 302
+              },
+              "right": {
+                "value": ",",
+                "weight": 306
+              },
+              "weight": 608
+            },
+            "right": {
+              "left": {
+                "left": {
+                  "value": "T",
+                  "weight": 155
+                },
+                "right": {
+                  "value": "M",
+                  "weight": 156
+                },
+                "weight": 311
+              },
+              "right": {
+                "value": "z",
+                "weight": 318
+              },
+              "weight": 629
+            },
+            "weight": 1237
+          },
+          "right": {
+            "value": "u",
+            "weight": 1260
+          },
+          "weight": 2497
+        },
+        "weight": 4987
+      },
+      "weight": 9635
+    },
+    "right": {
+      "left": {
+        "value": "e",
+        "weight": 5090
+      },
+      "right": {
+        "left": {
+          "left": {
+            "value": "l",
+            "weight": 1267
+          },
+          "right": {
+            "left": {
+              "left": {
+                "left": {
+                  "value": "<",
+                  "weight": 159
+                },
+                "right": {
+                  "value": ">",
+                  "weight": 160
+                },
+                "weight": 319
+              },
+              "right": {
+                "left": {
+                  "left": {
+                    "value": "H",
+                    "weight": 80
+                  },
+                  "right": {
+                    "value": "V",
+                    "weight": 81
+                  },
+                  "weight": 161
+                },
+                "right": {
+                  "left": {
+                    "value": "N",
+                    "weight": 82
+                  },
+                  "right": {
+                    "value": "6",
+                    "weight": 83
+                  },
+                  "weight": 165
+                },
+                "weight": 326
+              },
+              "weight": 645
+            },
+            "right": {
+              "value": "b",
+              "weight": 649
+            },
+            "weight": 1294
+          },
+          "weight": 2561
+        },
+        "right": {
+          "left": {
+            "left": {
+              "value": "w",
+              "weight": 653
+            },
+            "right": {
+              "left": {
+                "value": "v",
+                "weight": 335
+              },
+              "right": {
+                "left": {
+                  "value": "S",
+                  "weight": 167
+                },
+                "right": {
+                  "left": {
+                    "left": {
+                      "value": ")",
+                      "weight": 41
+                    },
+                    "right": {
+                      "value": "(",
+                      "weight": 42
+                    },
+                    "weight": 83
+                  },
+                  "right": {
+                    "value": "?",
+                    "weight": 85
+                  },
+                  "weight": 168
+                },
+                "weight": 335
+              },
+              "weight": 670
+            },
+            "weight": 1323
+          },
+          "right": {
+            "value": "d",
+            "weight": 1360
+          },
+          "weight": 2683
+        },
+        "weight": 5244
+      },
+      "weight": 10334
+    },
+    "weight": 19969
+  },
+  "right": {
+    "left": {
+      "left": {
+        "left": {
+          "value": "i",
+          "weight": 2860
+        },
+        "right": {
+          "left": {
+            "left": {
+              "left": {
+                "left": {
+                  "left": {
+                    "value": "j",
+                    "weight": 86
+                  },
+                  "right": {
+                    "value": "9",
+                    "weight": 87
+                  },
+                  "weight": 173
+                },
+                "right": {
+                  "left": {
+                    "value": "8",
+                    "weight": 88
+                  },
+                  "right": {
+                    "left": {
+                      "left": {
+                        "value": "~",
+                        "weight": 20
+                      },
+                      "right": {
+                        "value": "q",
+                        "weight": 24
+                      },
+                      "weight": 44
+                    },
+                    "right": {
+                      "value": "J",
+                      "weight": 45
+                    },
+                    "weight": 89
+                  },
+                  "weight": 177
+                },
+                "weight": 350
+              },
+              "right": {
+                "left": {
+                  "value": "A",
+                  "weight": 179
+                },
+                "right": {
+                  "left": {
+                    "value": "L",
+                    "weight": 90
+                  },
+                  "right": {
+                    "value": "G",
+                    "weight": 98
+                  },
+                  "weight": 188
+                },
+                "weight": 367
+              },
+              "weight": 717
+            },
+            "right": {
+              "left": {
+                "left": {
+                  "value": "D",
+                  "weight": 194
+                },
+                "right": {
+                  "left": {
+                    "value": "*",
+                    "weight": 98
+                  },
+                  "right": {
+                    "value": "5",
+                    "weight": 100
+                  },
+                  "weight": 198
+                },
+                "weight": 392
+              },
+              "right": {
+                "value": ":",
+                "weight": 394
+              },
+              "weight": 786
+            },
+            "weight": 1503
+          },
+          "right": {
+            "value": "h",
+            "weight": 1522
+          },
+          "weight": 3025
+        },
+        "weight": 5885
+      },
+      "right": {
+        "value": " ",
+        "weight": 5914
+      },
+      "weight": 11799
+    },
+    "right": {
+      "left": {
+        "left": {
+          "value": "n",
+          "weight": 3298
+        },
+        "right": {
+          "left": {
+            "left": {
+              "left": {
+                "left": {
+                  "value": "ü",
+                  "weight": 201
+                },
+                "right": {
+                  "left": {
+                    "value": "y",
+                    "weight": 106
+                  },
+                  "right": {
+                    "value": "P",
+                    "weight": 107
+                  },
+                  "weight": 213
+                },
+                "weight": 414
+              },
+              "right": {
+                "left": {
+                  "value": "0",
+                  "weight": 217
+                },
+                "right": {
+                  "left": {
+                    "left": {
+                      "value": "x",
+                      "weight": 53
+                    },
+                    "right": {
+                      "left": {
+                        "left": {
+                          "left": {
+                            "left": {
+                              "value": "$",
+                              "weight": 1
+                            },
+                            "right": {
+                              "value": "`",
+                              "weight": 3
+                            },
+                            "weight": 4
+                          },
+                          "right": {
+                            "value": "'",
+                            "weight": 7
+                          },
+                          "weight": 11
+                        },
+                        "right": {
+                          "value": "X",
+                          "weight": 15
+                        },
+                        "weight": 26
+                      },
+                      "right": {
+                        "value": "!",
+                        "weight": 29
+                      },
+                      "weight": 55
+                    },
+                    "weight": 108
+                  },
+                  "right": {
+                    "value": "ä",
+                    "weight": 110
+                  },
+                  "weight": 218
+                },
+                "weight": 435
+              },
+              "weight": 849
+            },
+            "right": {
+              "value": "g",
+              "weight": 879
+            },
+            "weight": 1728
+          },
+          "right": {
+            "left": {
+              "left": {
+                "value": "/",
+                "weight": 441
+              },
+              "right": {
+                "value": "p",
+                "weight": 443
+              },
+              "weight": 884
+            },
+            "right": {
+              "left": {
+                "left": {
+                  "value": "I",
+                  "weight": 221
+                },
+                "right": {
+                  "left": {
+                    "value": "C",
+                    "weight": 112
+                  },
+                  "right": {
+                    "value": "B",
+                    "weight": 119
+                  },
+                  "weight": 231
+                },
+                "weight": 452
+              },
+              "right": {
+                "value": "k",
+                "weight": 481
+              },
+              "weight": 933
+            },
+            "weight": 1817
+          },
+          "weight": 3545
+        },
+        "weight": 6843
+      },
+      "right": {
+        "left": {
+          "left": {
+            "value": "s",
+            "weight": 2001
+          },
+          "right": {
+            "left": {
+              "left": {
+                "left": {
+                  "left": {
+                    "value": "F",
+                    "weight": 120
+                  },
+                  "right": {
+                    "left": {
+                      "value": "R",
+                      "weight": 60
+                    },
+                    "right": {
+                      "left": {
+                        "value": "\"",
+                        "weight": 30
+                      },
+                      "right": {
+                        "value": "Y",
+                        "weight": 31
+                      },
+                      "weight": 61
+                    },
+                    "weight": 121
+                  },
+                  "weight": 241
+                },
+                "right": {
+                  "left": {
+                    "value": "3",
+                    "weight": 123
+                  },
+                  "right": {
+                    "value": "U",
+                    "weight": 123
+                  },
+                  "weight": 246
+                },
+                "weight": 487
+              },
+              "right": {
+                "value": "f",
+                "weight": 514
+              },
+              "weight": 1001
+            },
+            "right": {
+              "left": {
+                "left": {
+                  "left": {
+                    "left": {
+                      "value": "@",
+                      "weight": 63
+                    },
+                    "right": {
+                      "value": "ö",
+                      "weight": 63
+                    },
+                    "weight": 126
+                  },
+                  "right": {
+                    "value": "K",
+                    "weight": 128
+                  },
+                  "weight": 254
+                },
+                "right": {
+                  "value": "\n",
+                  "weight": 261
+                },
+                "weight": 515
+              },
+              "right": {
+                "left": {
+                  "left": {
+                    "left": {
+                      "left": {
+                        "value": "|",
+                        "weight": 31
+                      },
+                      "right": {
+                        "value": "O",
+                        "weight": 33
+                      },
+                      "weight": 64
+                    },
+                    "right": {
+                      "value": "4",
+                      "weight": 67
+                    },
+                    "weight": 131
+                  },
+                  "right": {
+                    "value": "1",
+                    "weight": 134
+                  },
+                  "weight": 265
+                },
+                "right": {
+                  "left": {
+                    "value": "W",
+                    "weight": 135
+                  },
+                  "right": {
+                    "left": {
+                      "value": "7",
+                      "weight": 68
+                    },
+                    "right": {
+                      "left": {
+                        "left": {
+                          "value": ";",
+                          "weight": 16
+                        },
+                        "right": {
+                          "value": "&",
+                          "weight": 17
+                        },
+                        "weight": 33
+                      },
+                      "right": {
+                        "value": "=",
+                        "weight": 35
+                      },
+                      "weight": 68
+                    },
+                    "weight": 136
+                  },
+                  "weight": 271
+                },
+                "weight": 536
+              },
+              "weight": 1051
+            },
+            "weight": 2052
+          },
+          "weight": 4053
+        },
+        "right": {
+          "left": {
+            "value": "a",
+            "weight": 2114
+          },
+          "right": {
+            "value": "r",
+            "weight": 2216
+          },
+          "weight": 4330
+        },
+        "weight": 8383
+      },
+      "weight": 15226
+    },
+    "weight": 27025
+  },
+  "weight": 46994
+}
