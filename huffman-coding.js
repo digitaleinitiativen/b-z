@@ -58,23 +58,12 @@ const decodeGenerator = (graph) => (text) => {
 	return decoded;
 };
 
-const testText = "Gemeinsam zünden wir den Funken* der Digitalisierung** in den Menschen*** der Region****";
-
-const charFrequency = getCharFrequency(testText);
-
-const graph = graphFromCharFrequency(charFrequency);
-
-const encode = encodeGenerator(graph);
-const decode = decodeGenerator(graph);
-
-console.log(charFrequency);
-console.log(JSON.stringify(graph, null, 2));
-console.log(codesFromGraph(graph));
-
-const text = "Digitale Initiativen";
-const encoded = encode(text);
-const decoded = decode(encoded);
-
-console.log(text);
-console.log(encoded);
-console.log(decoded);
+if (typeof module !== "undefined") {
+	module.exports = {
+		getCharFrequency,
+		graphFromCharFrequency,
+		codesFromGraph,
+		encodeGenerator,
+		decodeGenerator,
+	};
+}
