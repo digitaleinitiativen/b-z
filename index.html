@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>B Z</title>
+	</head>
+
+	<body>
+		<label for="story">Text</label><br />
+		<textarea id="textarea-plain" rows="5" cols="33">Digitale Initiativen</textarea><br />
+		<label for="story">Decode</label><br />
+		<textarea id="textarea-encoded" rows="5" cols="33">Digitale Initiativen</textarea><br />
+		<script>
+			let decode, encode;
+
+			const getJsonFromUrl = async (url) => {
+				return (await fetch(url)).json();
+			};
+
+			const addChangeListenerToTextarea = (element, onChange) => {
+				element.addEventListener("change", onChange);
+				element.addEventListener("input", onChange);
+				element.addEventListener("keyup", onChange);
+			};
+
+			const plainTextarea = document.getElementById("textarea-plain");
+			const encodedTextarea = document.getElementById("textarea-encoded");
+
+			const init = async () => {
+				const graph = await getJsonFromUrl("./graph.json");
+				decode = decodeGenerator(graph);
+				encode = encodeGenerator(graph);
+				console.log(graph);
+				encodedTextarea.value = encode(plainTextarea.value);
+			};
+
+			addChangeListenerToTextarea(plainTextarea, () => {
+				encodedTextarea.value = encode(plainTextarea.value);
+			});
+
+			addChangeListenerToTextarea(encodedTextarea, () => {
+				plainTextarea.value = decode(encodedTextarea.value);
+			});
+
+			init();
+		</script>
+		<script src="./huffman-coding.js"></script>
+	</body>
+</html>
