@@ -9,9 +9,12 @@
 		<label for="story">Decode</label><br />
 		<textarea id="textarea-encoded" rows="5" cols="33">Digitale Initiativen</textarea><br />
 		<br />
-		<button onclick="playAudio()">Play</button>
-		<button onclick="stopAudio()">Stop</button>
-		<script>
+		<button id="button-play">Play</button>
+		<button id="button-stop">Stop</button>
+		<button id="button-download">Download</button>
+		<script type="module">
+			import Crunker from "https://unpkg.com/crunker@latest/dist/crunker.esm.js";
+
 			let decode, encode;
 
 			const getJsonFromUrl = async (url) => {
@@ -40,16 +43,16 @@
 			});
 
 			addChangeListenerToTextarea(encodedTextarea, () => {
-				plainTextarea.value = decode(encodedTextarea.value);
+				plainTextarea.value = decode(encodedTextarea.value.toLowerCase());
 			});
 
 			init();
 
 			const timeouts = [];
-			const soundMapping = {
-				" ": undefined,
-				b: () => new Audio("./sounds/b-1.m4a"),
-				z: () => new Audio("./sounds/z-1.m4a"),
+			const soundPathMapping = {
+				" ": "./sounds/space-1.m4a",
+				b: "./sounds/b-1.m4a",
+				z: "./sounds/z-1.m4a",
 			};
 			const timeMapping = {
 				" ": 500,
@@ -57,19 +60,21 @@
 				z: 250,
 			};
 
+			const getEncodedSymbolArray = () => {
+				return encodedTextarea.value
+					.toLowerCase()
+					.split("")
+					.filter((letter) => [" ", "b", "z"].includes(letter));
+			};
+
 			const playAudio = () => {
-				const encoded = encodedTextarea.value;
 				let timeOffset = 0;
-				for (const letter of encoded.split("")) {
-					if ([" ", "b", "z"].includes(letter)) {
-						const timeoutId = setTimeout(() => {
-							if (soundMapping[letter]) {
-								soundMapping[letter]().play();
-							}
-						}, timeOffset);
-						timeouts.push(timeoutId);
-						timeOffset += timeMapping[letter];
-					}
+				for (const letter of getEncodedSymbolArray()) {
+					const timeoutId = setTimeout(() => {
+						new Audio(soundPathMapping[letter]).play();
+					}, timeOffset);
+					timeouts.push(timeoutId);
+					timeOffset += timeMapping[letter];
 				}
 			};
 
@@ -78,6 +83,23 @@
 					clearTimeout(timeoutId);
 				}
 			};
+			const downloadAudio = async () => {
+				let crunker = new Crunker();
+
+				const symbols = getEncodedSymbolArray();
+				crunker
+					.fetchAudio(...symbols.map((symbol) => soundPathMapping[symbol]))
+					.then((buffers) => crunker.concatAudio(buffers))
+					.then((merged) => crunker.export(merged, "audio/mp3"))
+					.then((output) => crunker.download(output.blob, "bz"))
+					.catch((error) => {
+						throw new Error(error);
+					});
+			};
+
+			document.getElementById("button-play").addEventListener("click", playAudio);
+			document.getElementById("button-stop").addEventListener("click", stopAudio);
+			document.getElementById("button-download").addEventListener("click", downloadAudio);
 		</script>
 		<script src="./huffman-coding.js"></script>
 	</body>
