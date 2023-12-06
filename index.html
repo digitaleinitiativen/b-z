@@ -48,13 +48,13 @@
 			const timeouts = [];
 			const soundMapping = {
 				" ": undefined,
-				b: new Audio("./sounds/b-1.m4a"),
-				z: new Audio("./sounds/z-1.m4a"),
+				b: () => new Audio("./sounds/b-1.m4a"),
+				z: () => new Audio("./sounds/z-1.m4a"),
 			};
 			const timeMapping = {
-				" ": 400,
-				b: 100,
-				z: 150,
+				" ": 500,
+				b: 200,
+				z: 250,
 			};
 
 			const playAudio = () => {
@@ -64,7 +64,7 @@
 					if ([" ", "b", "z"].includes(letter)) {
 						const timeoutId = setTimeout(() => {
 							if (soundMapping[letter]) {
-								soundMapping[letter].play();
+								soundMapping[letter]().play();
 							}
 						}, timeOffset);
 						timeouts.push(timeoutId);
