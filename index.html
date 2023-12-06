@@ -8,6 +8,9 @@
 		<textarea id="textarea-plain" rows="5" cols="33">Digitale Initiativen</textarea><br />
 		<label for="story">Decode</label><br />
 		<textarea id="textarea-encoded" rows="5" cols="33">Digitale Initiativen</textarea><br />
+		<br />
+		<button onclick="playAudio()">Play</button>
+		<button onclick="stopAudio()">Stop</button>
 		<script>
 			let decode, encode;
 
@@ -41,6 +44,40 @@
 			});
 
 			init();
+
+			const timeouts = [];
+			const soundMapping = {
+				" ": undefined,
+				b: new Audio("./sounds/b-1.m4a"),
+				z: new Audio("./sounds/z-1.m4a"),
+			};
+			const timeMapping = {
+				" ": 400,
+				b: 100,
+				z: 150,
+			};
+
+			const playAudio = () => {
+				const encoded = encodedTextarea.value;
+				let timeOffset = 0;
+				for (const letter of encoded.split("")) {
+					if ([" ", "b", "z"].includes(letter)) {
+						const timeoutId = setTimeout(() => {
+							if (soundMapping[letter]) {
+								soundMapping[letter].play();
+							}
+						}, timeOffset);
+						timeouts.push(timeoutId);
+						timeOffset += timeMapping[letter];
+					}
+				}
+			};
+
+			const stopAudio = () => {
+				for (const timeoutId of timeouts) {
+					clearTimeout(timeoutId);
+				}
+			};
 		</script>
 		<script src="./huffman-coding.js"></script>
 	</body>
