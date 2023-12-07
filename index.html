@@ -54,6 +54,11 @@
 				b: "./sounds/b-1.m4a",
 				z: "./sounds/z-1.m4a",
 			};
+			const exportSoundPathMapping = {
+				" ": "./sounds/space-1.m4a",
+				b: "./sounds/b-1-short.m4a",
+				z: "./sounds/z-1-short.m4a",
+			};
 			const timeMapping = {
 				" ": 500,
 				b: 200,
@@ -88,7 +93,7 @@
 
 				const symbols = getEncodedSymbolArray();
 				crunker
-					.fetchAudio(...symbols.map((symbol) => soundPathMapping[symbol]))
+					.fetchAudio(...symbols.map((symbol) => exportSoundPathMapping[symbol]))
 					.then((buffers) => crunker.concatAudio(buffers))
 					.then((merged) => crunker.export(merged, "audio/mp3"))
 					.then((output) => crunker.download(output.blob, "bz"))
